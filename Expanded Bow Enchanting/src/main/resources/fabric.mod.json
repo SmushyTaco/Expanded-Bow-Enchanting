@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "expanded_bow_enchanting",
+  "version": "${version}",
+  "name": "Expanded Bow Enchanting",
+  "description": "This mod allows you to use looting on a bow and allows mending and infinity to be on the same bow.",
+  "authors": [
+    "SmushyTaco"
+  ],
+  "contact": {
+    "homepage": "https://www.smushytaco.com/",
+    "issues": "https://www.curseforge.com/minecraft/mc-mods/expanded-bow-enchanting/issues/",
+    "sources": "https://github.com/SmushyTaco/Expanded-Bow-Enchanting/"
+  },
+  "license": "GNU Lesser General Public License version 3 (LGPLv3)",
+  "icon": "assets/expanded_bow_enchanting/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "com.smushytaco.expanded_bow_enchanting.ExpandedBowEnchanting"
+      }
+    ],
+    "preLaunch": [
+      {
+        "adapter": "kotlin",
+        "value": "com.smushytaco.expanded_bow_enchanting.ExpandedBowEnchantingPreLaunch"
+      }
+    ],
+    "modmenu": [
+      "com.smushytaco.expanded_bow_enchanting.configuration_support.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "expanded_bow_enchanting.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${fabricloader}",
+    "fabric-api": ">=${fabric_api}",
+    "fabric-language-kotlin": ">=${fabric_language_kotlin}",
+    "minecraft": ">=${minecraft}",
+    "java": ">=${java}",
+    "cloth-config2": ">=${clothconfig}",
+    "com_github_llamalad7_mixinextras": ">=${mixinextras}"
+  },
+  "suggests": {
+    "modmenu": ">=${modmenu}"
+  }
+}
