@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.smushytaco.expanded_bow_enchanting.mixin",
+  "compatibilityLevel": "JAVA_${java}",
+  "mixins": [
+    "BowModification",
+    "InfinityAndMendingCanBeMixed"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
