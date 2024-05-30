@@ -9,6 +9,5 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(InfinityEnchantment.class)
 public abstract class InfinityAndMendingCanBeMixed {
     @ModifyReturnValue(method = "canAccept", at = @At("RETURN"))
-    @SuppressWarnings("unused")
     private boolean hookCanAccept(boolean original, Enchantment other) { return ExpandedBowEnchanting.INSTANCE.getConfig().getInfinityAndMendingCanBeMixed() && other instanceof MendingEnchantment || original; }
 }
