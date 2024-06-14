@@ -9,4 +9,8 @@ class ModConfiguration: ConfigData {
     val infinityAndMendingCanBeMixed = true
     @Comment("Default value is yes. If set to yes you'll be able to use Looting on a bow. If set to no you won't be able to.")
     val canUseLootingOnBow = true
+    @Comment("Default value is yes. If set to yes you'll be able to use Piercing on a bow. If set to no you won't be able to.")
+    val canUsePiercingOnBow = true
+    @Comment("Default value is yes. If set to yes you'll be able to use Multishot on a bow. If set to no you won't be able to.")
+    val canUseMultishotOnBow = true
 }

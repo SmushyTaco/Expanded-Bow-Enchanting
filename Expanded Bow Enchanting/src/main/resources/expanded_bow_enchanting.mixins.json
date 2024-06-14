@@ -3,8 +3,7 @@
   "package": "com.smushytaco.expanded_bow_enchanting.mixin",
   "compatibilityLevel": "JAVA_${java}",
   "mixins": [
-    "BowModification",
-    "InfinityAndMendingCanBeMixed"
+    "BowModification"
   ],
   "injectors": {
     "defaultRequire": 1
