@@ -1,5 +1,7 @@
 {
   "text.autoconfig.expanded_bow_enchanting.title": "Expanded Bow Enchanting Configuration",
   "text.autoconfig.expanded_bow_enchanting.option.infinityAndMendingCanBeMixed": "Infinity And Mending Can Be Mixed",
-  "text.autoconfig.expanded_bow_enchanting.option.canUseLootingOnBow": "Can Use Looting On Bow"
+  "text.autoconfig.expanded_bow_enchanting.option.canUseLootingOnBow": "Can Use Looting On Bow",
+  "text.autoconfig.expanded_bow_enchanting.option.canUsePiercingOnBow": "Can Use Piercing On Bow",
+  "text.autoconfig.expanded_bow_enchanting.option.canUseMultishotOnBow": "Can Use Multishot On Bow"
 }
