@@ -12,7 +12,7 @@ object ExpandedBowEnchanting : ModInitializer {
     const val MOD_ID = "expanded_bow_enchanting"
     lateinit var config: ModConfiguration
         private set
-    private lateinit var dynamicRegistryManager: DynamicRegistryManager
+    private var dynamicRegistryManager: DynamicRegistryManager? = null
     override fun onInitialize() {
         AutoConfig.register(ModConfiguration::class.java) { definition: Config, configClass: Class<ModConfiguration> ->
             GsonConfigSerializer(definition, configClass)
@@ -20,5 +20,5 @@ object ExpandedBowEnchanting : ModInitializer {
         config = AutoConfig.getConfigHolder(ModConfiguration::class.java).config
         ServerLifecycleEvents.SERVER_STARTED.register { server -> dynamicRegistryManager = server.registryManager }
     }
-    fun isSameEnchantment(enchantment: Enchantment, enchantmentRegistryKey: RegistryKey<Enchantment>) = dynamicRegistryManager.getOptional(RegistryKeys.ENCHANTMENT).getOrNull()?.getEntry(enchantment)?.matchesKey(enchantmentRegistryKey) ?: false
+    fun isSameEnchantment(enchantment: Enchantment, enchantmentRegistryKey: RegistryKey<Enchantment>) = dynamicRegistryManager?.getOptional(RegistryKeys.ENCHANTMENT)?.getOrNull()?.getEntry(enchantment)?.matchesKey(enchantmentRegistryKey) ?: false
 }
