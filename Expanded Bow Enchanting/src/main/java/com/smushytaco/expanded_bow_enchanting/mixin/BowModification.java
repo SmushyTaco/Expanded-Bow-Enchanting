@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.registry.entry.RegistryEntry;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import java.util.Set;
 @Mixin(Enchantment.class)
 public abstract class BowModification {
     @ModifyReturnValue(method = "isAcceptableItem", at = @At("RETURN"))
@@ -26,5 +27,5 @@ public abstract class BowModification {
         return original;
     }
     @ModifyReturnValue(method = "canBeCombined", at = @At("RETURN"))
-    private static boolean hookCanBeCombined(boolean original, RegistryEntry<Enchantment> first, RegistryEntry<Enchantment> second) { return ExpandedBowEnchanting.INSTANCE.getConfig().getInfinityAndMendingCanBeMixed() && (first.matchesKey(Enchantments.INFINITY) && second.matchesKey(Enchantments.MENDING) || first.matchesKey(Enchantments.MENDING) && second.matchesKey(Enchantments.INFINITY)) || original; }
+    private static boolean hookCanBeCombined(boolean original, RegistryEntry<Enchantment> first, RegistryEntry<Enchantment> second) { return original || ExpandedBowEnchanting.INSTANCE.getConfig().getInfinityAndMendingCanBeMixed() && ExpandedBowEnchanting.INSTANCE.canCombineEnchantments(first, second, Set.of(Enchantments.INFINITY, Enchantments.MENDING)); }
 }
